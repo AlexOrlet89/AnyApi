@@ -9,13 +9,13 @@ describe('backend-express-template routes', () => {
   });
   it('/friends/1 should return ross', async () => {
     const results = await request(app).get('/friends/1');
-    const expected = { id: '1', name: 'Ross', status: 'Alive' };
+    const expected = { id: '1', name: 'Ross', status: 'unknown' };
     expect(results.body).toEqual(expected);
   });
   it('/friends should return the whole gang of friends', async () => {
     const results = await request(app).get('/friends');
     const expected = [
-      { id: '1', name: 'Ross', status: 'Alive' },
+      { id: '1', name: 'Ross', status: 'unknown' },
       { id: '2', name: 'Phoebe', status: 'Alive' },
       { id: '3', name: 'Rachel', status: 'Alive' },
       { id: '4', name: 'Monica', status: 'Alive' },
