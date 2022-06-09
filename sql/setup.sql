@@ -14,7 +14,7 @@ create table friends (
 );
 
 INSERT INTO friends (name, status) VALUES
-('Ross', 'Alive'),
+('Ross', 'unknown'),
 ('Phoebe', 'Alive'),
 ('Rachel', 'Alive'),
 ('Monica', 'Alive'),

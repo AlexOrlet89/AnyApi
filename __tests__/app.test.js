@@ -12,6 +12,18 @@ describe('backend-express-template routes', () => {
     const expected = { id: '1', name: 'Ross', status: 'Alive' };
     expect(results.body).toEqual(expected);
   });
+  it('/friends should return the whole gang of friends', async () => {
+    const results = await request(app).get('/friends');
+    const expected = [
+      { id: '1', name: 'Ross', status: 'Alive' },
+      { id: '2', name: 'Phoebe', status: 'Alive' },
+      { id: '3', name: 'Rachel', status: 'Alive' },
+      { id: '4', name: 'Monica', status: 'Alive' },
+      { id: '5', name: 'Chandler', status: 'Alive' },
+      { id: '6', name: 'Joey', status: 'Alive' },
+    ];
+    expect(results.body).toEqual(expected);
+  });
   afterAll(() => {
     pool.end();
   });
